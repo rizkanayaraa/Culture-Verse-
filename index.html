@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="id" class="intro-active">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semesta Budaya - Jejak Budaya Indonesia</title>
+    <link rel="icon" type="image/png" href="/img/logo/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html.intro-active { overflow: hidden; scrollbar-width: none; -ms-overflow-style: none; }
+        html.intro-active::-webkit-scrollbar { display: none; width: 0; }
+        html.intro-active body { overflow: hidden; }
+    </style>
+</head>
+<body>
+
+    <div id="split-intro">
+        <div class="split-panel top">
+            <div class="split-intro-content">
+                <div class="split-intro-line"></div>
+                <h1 class="split-intro-title">Semesta Budaya</h1>
+                <p class="split-intro-subtitle">Jejak Budaya Indonesia</p>
+                <div class="split-intro-line"></div>
+            </div>
+        </div>
+        <div class="split-panel bottom"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="/img/logo/logo.png" alt="Logo" class="logo">
+            <div class="logo-text">
+                <h1>Semesta Budaya</h1>
+                <p>Jejak Budaya Indonesia</p>
+            </div>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero-section">Beranda</a></li>
+            <li><a href="#peta-budaya">Peta</a></li>
+            <li><a href="#galeri-budaya">Jelajahi Budaya</a></li>
+            <li><a href="#keberagaman">Keberagaman</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="hero-section">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-content">
+            <h1>Satu Nusantara</h1>
+            <h2>Seribu Cerita</h2>
+            <p>Jelajahi kekayaan budaya indonesia melalui pengalaman digital modern yang menghubungkan tradisi dengan generasi masa kini</p>
+            <a href="#galeri-budaya" class="btn-explore">Explore Culture ></a>
+        </div>
+        <div class="hero-image">
+            <img src="/img/hero/hero.jpg" alt="Budaya Indonesia">
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item animate-fade-up">
+                <span class="stat-number" data-target="34">0</span>
+                <span class="stat-suffix"></span>
+                <div class="stat-label">Provinsi</div>
+                <div class="stat-line"></div>
+            </div>
+            <div class="stat-item animate-fade-up">
+                <span class="stat-number" data-target="700">0</span>
+                <span class="stat-suffix">+</span>
+                <div class="stat-label">Bahasa Daerah</div>
+                <div class="stat-line"></div>
+            </div>
+            <div class="stat-item animate-fade-up">
+                <span class="stat-number" data-target="1300">0</span>
+                <span class="stat-suffix">+</span>
+                <div class="stat-label">Suku Bangsa</div>
+                <div class="stat-line"></div>
+            </div>
+            <div class="stat-item animate-fade-up">
+                <span class="stat-number" data-target="17000">0</span>
+                <span class="stat-suffix">+</span>
+                <div class="stat-label">Pulau</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="culture-map animate-fade-up" id="peta-budaya">
+        <h2 class="map-title">Peta Budaya Nusantara</h2>
+        <div class="map-section-container">
+            <div class="map-wrapper">
+                <img src="/img/map/map.png" alt="Peta Indonesia" class="indonesia-map-img">
+                
+                <div class="map-hotspot active" style="top: 38%; left: 11%;" data-region="sumatera">
+                    <span class="hotspot-pulse"></span>
+                    <span class="hotspot-dot"></span>
+                </div>
+                <div class="map-hotspot" style="top: 70%; left: 28%;" data-region="jawa">
+                    <span class="hotspot-pulse"></span>
+                    <span class="hotspot-dot"></span>
+                </div>
+                <div class="map-hotspot" style="top: 76%; left: 45%;" data-region="balinusatenggara">
+                    <span class="hotspot-pulse"></span>
+                    <span class="hotspot-dot"></span>
+                </div>
+                <div class="map-hotspot" style="top: 38%; left: 38%;" data-region="kalimantan">
+                    <span class="hotspot-pulse"></span>
+                    <span class="hotspot-dot"></span>
+                </div>
+                <div class="map-hotspot" style="top: 45%; left: 57%;" data-region="sulawesi">
+                    <span class="hotspot-pulse"></span>
+                    <span class="hotspot-dot"></span>
+                </div>
+                <div class="map-hotspot" style="top: 45%; left: 82%;" data-region="papua">
+                    <span class="hotspot-pulse"></span>
+                    <span class="hotspot-dot"></span>
+                </div>
+            </div>
+
+            <div class="map-info-panel">
+                <div class="info-card-content" id="map-info-card">
+                    <div class="info-image" style="background-image: url('https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=500&q=80');"></div>
+                    <div class="info-text">
+                        <h3>Sumatera</h3>
+                        <span class="info-highlight">Rumah Gadang, Tari Saman, Songket</span>
+                        <p>Pusat peradaban rumpun Melayu dan Minangkabau. Terkenal dengan arsitektur atap lancip ikonik dan tarian dinamis penuh kekompakan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ini yang perlu ditambahin -->
+    <section class="gallery-section" id="galeri-budaya">
+        <h2 class="gallery-title">Galeri Budaya</h2>
+        <div class="swiper gallery-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide card">
+                    <img src="/img/carousel/rajaampat.jpeg" alt="Raja Ampat">
+                    <div class="gallery-card-overlay"></div>
+                    <div class="gallery-card-label">Raja Ampat</div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="/img/carousel/candi.jpeg" alt="Candi Prambanan">
+                    <div class="gallery-card-overlay"></div>
+                    <div class="gallery-card-label">Candi Prambanan</div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="/img/carousel/masjidPadang.jpeg" alt="Rumah Gadang">
+                    <div class="gallery-card-overlay"></div>
+                    <div class="gallery-card-label">Masjid Agung Padang</div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="/img/carousel/monas.jpeg" alt="Monas">
+                    <div class="gallery-card-overlay"></div>
+                    <div class="gallery-card-label">Monas</div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="/img/carousel/ampera.jpeg" alt="Jembatan Ampera">
+                    <div class="gallery-card-overlay"></div>
+                    <div class="gallery-card-label">Jembatan Ampera</div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="/img/carousel/bali.jpeg" alt="Pura Ulun Danu Bratan">
+                    <div class="gallery-card-overlay"></div>
+                    <div class="gallery-card-label">Pura Ulun Danu Bratan</div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="/img/carousel/gwk.jpeg" alt="Garuda Wisnu Kencana">
+                    <div class="gallery-card-overlay"></div>
+                    <div class="gallery-card-label">Garuda Wisnu Kencana</div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <div class="marquee-strip">
+        <div class="marquee-track">
+            <span>Batik</span><span class="sep">&#10022;</span>
+            <span>Wayang Kulit</span><span class="sep">&#10022;</span>
+            <span>Gamelan</span><span class="sep">&#10022;</span>
+            <span>Tari Kecak</span><span class="sep">&#10022;</span>
+            <span>Reog Ponorogo</span><span class="sep">&#10022;</span>
+            <span>Tenun Ikat</span><span class="sep">&#10022;</span>
+            <span>Rumah Gadang</span><span class="sep">&#10022;</span>
+            <span>Angklung</span><span class="sep">&#10022;</span>
+            <span>Noken</span><span class="sep">&#10022;</span>
+            <span>Tari Saman</span><span class="sep">&#10022;</span>
+            <span>Keris</span><span class="sep">&#10022;</span>
+            <span>Subak</span><span class="sep">&#10022;</span>
+            <span>Batik</span><span class="sep">&#10022;</span>
+            <span>Wayang Kulit</span><span class="sep">&#10022;</span>
+            <span>Gamelan</span><span class="sep">&#10022;</span>
+            <span>Tari Kecak</span><span class="sep">&#10022;</span>
+            <span>Reog Ponorogo</span><span class="sep">&#10022;</span>
+            <span>Tenun Ikat</span><span class="sep">&#10022;</span>
+            <span>Rumah Gadang</span><span class="sep">&#10022;</span>
+            <span>Angklung</span><span class="sep">&#10022;</span>
+            <span>Noken</span><span class="sep">&#10022;</span>
+            <span>Tari Saman</span><span class="sep">&#10022;</span>
+            <span>Keris</span><span class="sep">&#10022;</span>
+            <span>Subak</span><span class="sep">&#10022;</span>
+        </div>
+    </div>
+
+    <section class="culture-showcase" id="jelajahi-budaya">
+        <div class="showcase-row">
+            <div class="showcase-cards-wrapper animate-left">
+                <div class="showcase-navy-panel"></div>
+                <div class="showcase-cards-flex">
+                    <div class="showcase-card" style="background-image: url('/img/batik/Batik\ Parang.jpg');">
+                        <span class="showcase-card-label">Batik Parang</span>
+                    </div>
+                    <div class="showcase-card" style="background-image: url('/img/batik/Batik\ ombak.jpg');">
+                        <span class="showcase-card-label">Batik Ombak</span>
+                    </div>
+                    <div class="showcase-card" style="background-image: url('/img/batik/Batik\ mega\ mendung.jpg');">
+                        <span class="showcase-card-label">Batik Mega Mendung</span>
+                    </div>  
+                </div>
+                <div class="showcase-gold-bar"></div>
+            </div>
+            <div class="showcase-text-block animate-right">
+                <h2>Ragam Motif yang penuh<br>makna dan filosofi<br>warisan leluhur</h2>
+                <div class="showcase-divider">
+                    <span class="line"></span>
+                    <span class="mark">&#8214;</span>
+                    <span class="line right"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-row reverse">
+            <div class="showcase-cards-wrapper  animate-right">
+                <div class="showcase-navy-panel"></div>
+                <div class="showcase-cards-flex">
+                    <div class="showcase-card" style="background-image: url('/img/kerajinan/ukiran\ kayu\ jepara.jpg');">
+                        <span class="showcase-card-label">Ukiran Kayu Khas Jepara</span>
+                    </div>
+                    <div class="showcase-card" style="background-image: url('/img/kerajinan/wayang.jpg');">
+                        <span class="showcase-card-label">Wayang Kulit</span>
+                    </div>
+                    <div class="showcase-card" style="background-image: url('/img/kerajinan/Kain\ tenun.jpg');">
+                        <span class="showcase-card-label">Kain Tenun</span>
+                    </div>
+                </div>
+                <div class="showcase-gold-bar"></div>
+            </div>
+            <div class="showcase-text-block animate-left">
+                <h2>Karya tangan terampil<br>yang diwariskan turun<br>temurun</h2>
+                <div class="showcase-divider">
+                    <span class="line"></span>
+                    <span class="mark">&#8214;</span>
+                    <span class="line right"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-row">
+            <div class="showcase-cards-wrapper animate-left">
+                <div class="showcase-navy-panel"></div>
+                <div class="showcase-cards-flex">
+                    <div class="showcase-card" style="background-image: url('/img/seni/tari\ kecak.jpg');">
+                        <span class="showcase-card-label">Tari Kecak</span>
+                    </div>
+                    <div class="showcase-card" style="background-image: url('/img/seni/lompat.jpg');">
+                        <span class="showcase-card-label">Lompat Batu Nias</span>
+                    </div>
+                    <div class="showcase-card" style="background-image: url('/img/seni/pagelaran.jpg');">
+                        <span class="showcase-card-label">Pagelaran Wayang Kulit</span>
+                    </div>
+                </div>
+                <div class="showcase-gold-bar"></div>
+            </div>
+            <div class="showcase-text-block animate-right">
+                <h2>Ekspresi budaya yang<br>mencerminkan identitas<br>dan jati diri bangsa</h2>
+                <div class="showcase-divider">
+                    <span class="line"></span>
+                    <span class="mark">&#8214;</span>
+                    <span class="line right"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-row reverse">
+            <div class="showcase-cards-wrapper animate-right">
+                <div class="showcase-navy-panel"></div>
+                <div class="showcase-cards-flex">
+                    <div class="showcase-card" style="background-image: url('/img/kuliner/Pecel.jpg');">
+                        <span class="showcase-card-label">Pecal</span>
+                    </div>
+                    <div class="showcase-card" style="background-image: url('/img/kuliner/Papeda\ Ikan.jpg');">
+                        <span class="showcase-card-label">Papeda Ikan</span>
+                    </div>
+                    <div class="showcase-card" style="background-image: url('/img/kuliner/Rendang.jpg');">
+                        <span class="showcase-card-label">Rendang</span>
+                    </div>
+                </div>
+                <div class="showcase-gold-bar"></div>
+            </div>
+            <div class="showcase-text-block animate-left">
+                <h2>Cita rasa khas dari<br>berbagai daerah di<br>Indonesia</h2>
+                <div class="showcase-divider">
+                    <span class="line"></span>
+                    <span class="mark">&#8214;</span>
+                    <span class="line right"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="diversity-section" id="keberagaman">
+        <h2 class="diversity-title animate-fade-up">Keberagaman di Indonesia</h2>
+        <div class="diversity-grid">
+            <div class="diversity-card animate-fade-up" style="background-image: url('/img/keberagaman/masijid.jpeg');">
+                <span class="diversity-card-label">Islam</span>
+            </div>
+            <div class="diversity-card animate-fade-up" style="background-image: url('/img/keberagaman/katolik.jpeg');">
+                <span class="diversity-card-label">Protestan</span>
+            </div>
+            <div class="diversity-card animate-fade-up" style="background-image: url('/img/keberagaman/Gereja.jpeg');">
+                <span class="diversity-card-label">Katolik</span>
+            </div>
+            <div class="diversity-card animate-fade-up" style="background-image: url('/img/keberagaman/klenteng.jpeg');">
+                <span class="diversity-card-label">Konghucu</span>
+            </div>
+            <div class="diversity-card animate-fade-up" style="background-image: url('/img/keberagaman/pura.jpeg');">
+                <span class="diversity-card-label">Hindu</span>
+            </div>
+            <div class="diversity-card animate-fade-up" style="background-image: url('/img/keberagaman/buddha.jpeg');">
+                <span class="diversity-card-label">Buddha</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-stats">
+            <div class="footer-stat-item">
+                <svg class="footer-stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <div class="footer-stat-text">
+                    <span class="footer-stat-num">1.300+</span>
+                    <span class="footer-stat-label">Suku Bangsa</span>
+                </div>
+            </div>
+            <div class="footer-stat-item">
+                <svg class="footer-stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                <div class="footer-stat-text">
+                    <span class="footer-stat-num">178+</span>
+                    <span class="footer-stat-label">Bahasa Daerah</span>
+                </div>
+            </div>
+            <div class="footer-stat-item">
+                <svg class="footer-stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <div class="footer-stat-text">
+                    <span class="footer-stat-num">38</span>
+                    <span class="footer-stat-label">Provinsi</span>
+                </div>
+            </div>
+            <div class="footer-stat-item">
+                <svg class="footer-stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 15c2-2 4-3 6-3s4 1 6 3 4 3 6 3"/><path d="M3 9c2-2 4-3 6-3s4 1 6 3 4 3 6 3"/></svg>
+                <div class="footer-stat-text">
+                    <span class="footer-stat-num">17.000+</span>
+                    <span class="footer-stat-label">Pulau</span>
+                </div>
+            </div>
+            <div class="footer-stat-item">
+                <svg class="footer-stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                <div class="footer-stat-text">
+                    <span class="footer-stat-num">5.000+</span>
+                    <span class="footer-stat-label">Seni Tradisional</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-main">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="/img/logo/logo.png" alt="Logo" class="logo">
+                    <div>
+                        <h3 class="footer-brand-name">Semesta Budaya</h3>
+                        <p class="footer-brand-tagline">Jejak Budaya Indonesia</p>
+                    </div>
+                </div>
+                <p class="footer-desc">Menjelajahi dan melestarikan kekayaan budaya Nusantara melalui pengalaman digital yang menghubungkan tradisi dengan generasi masa kini.</p>
+            </div>
+
+            <div class="footer-contact">
+                <h4 class="footer-heading">Kontak Kami</h4>
+                <div class="footer-socials">
+                    <a href="#" class="footer-social-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                        <span>@miqdadfh & @rizkaranay</span>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="4"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>
+                        <span>CultureVerse</span>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        <span>@FHRRZZZ & @rizkanayaraa</span>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="Email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+                        <span>CultureVerse</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-deco">
+                <div class="footer-circle footer-circle-gold"></div>
+                <div class="footer-circle footer-circle-cream"></div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>&copy; 2025 CultureVerse. Semua hak dilindungi.</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const menu = document.querySelector('#mobile-menu');
+        const menuLinks = document.querySelector('.nav-links');
+        const navbar = document.querySelector('.navbar');
+
+        menu.addEventListener('click', function() {
+            menuLinks.classList.toggle('active');
+        });
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 60) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const getStretchValue = () => {
+                return window.innerWidth < 768 ? -60 : -120;
+            };
+
+            const swiper = new Swiper('.gallery-swiper', {
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                loop: true,
+                initialSlide: 3,
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: getStretchValue(),
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: true,
+                },
+                keyboard: {
+                    enabled: true,
+                },
+                mousewheel: {
+                    forceToAxis: true,
+                },
+            });
+
+            window.addEventListener('resize', () => {
+                swiper.params.coverflowEffect.stretch = getStretchValue();
+                swiper.update();
+            });
+        });
+
+        (function() {
+            const intro = document.getElementById('split-intro');
+            const panelTop = intro.querySelector('.split-panel.top');
+            const panelBot = intro.querySelector('.split-panel.bottom');
+
+            setTimeout(() => {
+                panelTop.classList.add('slide-out');
+                panelBot.classList.add('slide-out');
+
+                setTimeout(() => {
+                    document.documentElement.classList.remove('intro-active');
+                    document.documentElement.style.overflow = '';
+                    document.documentElement.style.scrollbarWidth = '';
+                    intro.classList.add('hidden');
+                }, 1050);
+            }, 1800);
+        })();
+
+        (function() {
+            const animElements = document.querySelectorAll('.animate-left, .animate-right, .animate-fade-up');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -60px 0px'
+            });
+
+            animElements.forEach(el => observer.observe(el));
+        })();
+
+        (function() {
+            const canvas = document.getElementById('particle-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+
+            function resize() {
+                const hero = document.getElementById('hero-section');
+                canvas.width = hero.offsetWidth;
+                canvas.height = hero.offsetHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            function createParticle() {
+                return {
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    r: Math.random() * 1.5 + 0.4,
+                    alpha: Math.random() * 0.4 + 0.05,
+                    dx: (Math.random() - 0.5) * 0.3,
+                    dy: -Math.random() * 0.4 - 0.1,
+                    life: 1,
+                    decay: Math.random() * 0.002 + 0.001
+                };
+            }
+
+            for (let i = 0; i < 60; i++) particles.push(createParticle());
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach((p, i) => {
+                    p.x += p.dx;
+                    p.y += p.dy;
+                    p.life -= p.decay;
+                    if (p.life <= 0 || p.y < 0) particles[i] = createParticle();
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(201, 169, 110, ${p.alpha * p.life})`;
+                    ctx.fill();
+                });
+                requestAnimationFrame(draw);
+            }
+            draw();
+        })();
+
+        (function() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 60;
+
+            function animateCounter(el) {
+                const target = parseInt(el.dataset.target);
+                let current = 0;
+                const increment = Math.ceil(target / speed);
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        el.textContent = target.toLocaleString('id-ID');
+                        clearInterval(timer);
+                    } else {
+                        el.textContent = current.toLocaleString('id-ID');
+                    }
+                }, 20);
+            }
+
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const number = entry.target.querySelector('.stat-number');
+                        if (number && !number.dataset.animated) {
+                            number.dataset.animated = true;
+                            animateCounter(number);
+                        }
+                    }
+                });
+            }, { threshold: 0.4 });
+
+            document.querySelectorAll('.stat-item').forEach(el => statsObserver.observe(el));
+        })();
+
+        (function() {
+            const hotspots = document.querySelectorAll('.map-hotspot');
+            const infoCard = document.getElementById('map-info-card');
+            
+            const regionData = {
+                sumatera: {
+                    title: "Sumatera",
+                    highlight: "Rumah Gadang, Tari Saman, Songket",
+                    desc: "Pusat peradaban rumpun Melayu dan Minangkabau. Terkenal dengan arsitektur atap lancip ikonik dan tarian dinamis penuh kekompakan.",
+                    image: "/img/peta/gadang.jpg"
+                },
+                jawa: {
+                    title: "Jawa",
+                    highlight: "Wayang Kulit, Gamelan Jawa, Batik",
+                    desc: "Kaya akan warisan keraton Jawa dan Sunda yang agung. Melahirkan karya filosofis luhur seperti batik tulis dan pertunjukan wayang kulit klasik.",
+                    image: "/img/peta/batik.jpg"
+                },
+                balinusatenggara: {
+                    title: "Bali & Nusa Tenggara",
+                    highlight: "Tari Kecak, Kain Tenun Ikat, Sasando",
+                    desc: "Harmoni ritus spiritual Bali yang memukau dunia berpadu dengan tradisi tenun ikat eksotis serta alat musik sasando dari Nusa Tenggara.",
+                    image: "/img/peta/kecak.jpg"
+                },
+                kalimantan: {
+                    title: "Kalimantan",
+                    highlight: "Rumah Betang, Tari Mandau, Sape",
+                    desc: "Rumah bagi kebudayaan Dayak yang menyatu erat dengan hutan hujan tropis. Memiliki musik sape yang magis dan tradisi rumah panjang komunal.",
+                    image: "/img/peta/mandau.jpg"
+                },
+                sulawesi: {
+                    title: "Sulawesi",
+                    highlight: "Tongkonan, Tari Kipas, Kapal Pinisi",
+                    desc: "Terkenal dengan kebudayaan maritim Bugis-Makassar penjelajah samudera dan tradisi pemakaman magis serta arsitektur Tongkonan di Toraja.",
+                    image: "/img/peta/pinisi.jpg"
+                },
+                papua: {
+                    title: "Papua & Maluku",
+                    highlight: "Rumah Honai, Tari Perang, Alat Musik Tifa",
+                    desc: "Kekayaan budaya Melanesia yang eksotis di timur nusantara. Terkenal dengan tari komunal tifa yang bersemangat dan kerajinan ukir yang bernilai tinggi.",
+                    image: "/img/peta/hanoi.jpg"
+                }
+            };
+
+            hotspots.forEach(hotspot => {
+                hotspot.addEventListener('mouseenter', function() {
+                    hotspots.forEach(h => h.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const region = this.dataset.region;
+                    const data = regionData[region];
+                    
+                    if (data) {
+                        infoCard.style.opacity = '0';
+                        infoCard.style.transform = 'translateY(10px)';
+                        
+                        setTimeout(() => {
+                            infoCard.querySelector('.info-image').style.backgroundImage = `url('${data.image}')`;
+                            infoCard.querySelector('h3').textContent = data.title;
+                            infoCard.querySelector('.info-highlight').textContent = data.highlight;
+                            infoCard.querySelector('p').textContent = data.desc;
+                            
+                            infoCard.style.opacity = '1';
+                            infoCard.style.transform = 'translateY(0)';
+                        }, 200);
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
