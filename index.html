@@ -50,6 +50,7 @@
             <li><a href="#keberagaman">Keberagaman</a></li>
         </ul>
     </nav>
+    <div class="nav-backdrop" id="nav-backdrop"></div>
 
     <section class="hero" id="hero-section">
         <canvas id="particle-canvas"></canvas>
@@ -397,7 +398,7 @@
             <div class="footer-contact">
                 <h4 class="footer-heading">Kontak Kami</h4>
                 <div class="footer-socials">
-                    <a href="#" class="footer-social-link" aria-label="Instagram">
+                    <a href="" class="footer-social-link" aria-label="Instagram">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
                         <span>@miqdadfh & @rizkaranay</span>
                     </a>
@@ -432,16 +433,50 @@
         const menu = document.querySelector('#mobile-menu');
         const menuLinks = document.querySelector('.nav-links');
         const navbar = document.querySelector('.navbar');
+        const backdrop = document.querySelector('#nav-backdrop');
+
+        function openMenu() {
+            menuLinks.classList.add('active');
+            menu.classList.add('open');
+            backdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            menuLinks.classList.remove('active');
+            menu.classList.remove('open');
+            backdrop.classList.remove('active');
+            document.body.style.overflow = '';
+        }
 
         menu.addEventListener('click', function() {
-            menuLinks.classList.toggle('active');
+            if (menuLinks.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
         });
+
+        // Close menu on nav link click
+        menuLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Close on backdrop click
+        backdrop.addEventListener('click', closeMenu);
 
         window.addEventListener('scroll', function() {
             if (window.scrollY > 60) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Close on resize to desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                closeMenu();
             }
         });
 
