@@ -127,7 +127,7 @@
 
             <div class="map-info-panel">
                 <div class="info-card-content" id="map-info-card">
-                    <div class="info-image" style="background-image: url('https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=500&q=80');"></div>
+                    <div class="info-image" style="background-image: url('/img/peta/gadang.jpg');"></div>
                     <div class="info-text">
                         <h3>Sumatera</h3>
                         <span class="info-highlight">Rumah Gadang, Tari Saman, Songket</span>
@@ -404,7 +404,7 @@
                     </a>
                     <a href="#" class="footer-social-link" aria-label="YouTube">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="4"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>
-                        <span>CultureVerse</span>
+                        <span>Semesta Budaya</span>
                     </a>
                     <a href="#" class="footer-social-link" aria-label="GitHub">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
@@ -412,7 +412,7 @@
                     </a>
                     <a href="#" class="footer-social-link" aria-label="Email">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
-                        <span>CultureVerse</span>
+                        <span>semestabudaya@gmail.com</span>
                     </a>
                 </div>
             </div>
@@ -424,68 +424,50 @@
         </div>
 
         <div class="footer-bottom">
-            <span>&copy; 2025 CultureVerse. Semua hak dilindungi.</span>
+            <span>&copy; 2025 Semesta Budaya. Semua hak dilindungi.</span>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        const menu = document.querySelector('#mobile-menu');
-        const menuLinks = document.querySelector('.nav-links');
-        const navbar = document.querySelector('.navbar');
-        const backdrop = document.querySelector('#nav-backdrop');
+        const menu = document.querySelector('#mobile-menu')
+        const menuLinks = document.querySelector('.nav-links')
+        const navbar = document.querySelector('.navbar')
+        const backdrop = document.querySelector('#nav-backdrop')
 
         function openMenu() {
-            menuLinks.classList.add('active');
-            menu.classList.add('open');
-            backdrop.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            menuLinks.classList.add('active')
+            menu.classList.add('open')
+            backdrop.classList.add('active')
+            document.body.style.overflow = 'hidden'
         }
 
         function closeMenu() {
-            menuLinks.classList.remove('active');
-            menu.classList.remove('open');
-            backdrop.classList.remove('active');
-            document.body.style.overflow = '';
+            menuLinks.classList.remove('active')
+            menu.classList.remove('open')
+            backdrop.classList.remove('active')
+            document.body.style.overflow = ''
         }
 
         menu.addEventListener('click', function() {
-            if (menuLinks.classList.contains('active')) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
-        });
+            menuLinks.classList.contains('active') ? closeMenu() : openMenu()
+        })
 
-        // Close menu on nav link click
-        menuLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-
-        // Close on backdrop click
-        backdrop.addEventListener('click', closeMenu);
+        menuLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu))
+        backdrop.addEventListener('click', closeMenu)
 
         window.addEventListener('scroll', function() {
-            if (window.scrollY > 60) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+            navbar.classList.toggle('scrolled', window.scrollY > 60)
+        })
 
-        // Close on resize to desktop
         window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                closeMenu();
-            }
-        });
+            if (window.innerWidth > 768) closeMenu()
+        })
 
-        document.addEventListener("DOMContentLoaded", () => {
-            const getStretchValue = () => {
-                return window.innerWidth < 768 ? -60 : -120;
-            };
+        document.addEventListener("DOMContentLoaded", function() {
+            var stretchVal = window.innerWidth < 768 ? -60 : -120
 
-            const swiper = new Swiper('.gallery-swiper', {
+            var swiper = new Swiper('.gallery-swiper', {
                 effect: 'coverflow',
                 grabCursor: true,
                 centeredSlides: true,
@@ -494,86 +476,72 @@
                 initialSlide: 3,
                 coverflowEffect: {
                     rotate: 0,
-                    stretch: getStretchValue(),
+                    stretch: stretchVal,
                     depth: 100,
                     modifier: 1,
-                    slideShadows: true,
+                    slideShadows: true
                 },
                 navigation: {
                     nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    prevEl: '.swiper-button-prev'
                 },
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
-                    dynamicBullets: true,
+                    dynamicBullets: true
                 },
-                keyboard: {
-                    enabled: true,
-                },
-                mousewheel: {
-                    forceToAxis: true,
-                },
-            });
+                keyboard: { enabled: true },
+                mousewheel: { forceToAxis: true }
+            })
 
-            window.addEventListener('resize', () => {
-                swiper.params.coverflowEffect.stretch = getStretchValue();
-                swiper.update();
-            });
-        });
+            window.addEventListener('resize', function() {
+                swiper.params.coverflowEffect.stretch = window.innerWidth < 768 ? -60 : -120
+                swiper.update()
+            })
+        })
 
-        (function() {
-            const intro = document.getElementById('split-intro');
-            const panelTop = intro.querySelector('.split-panel.top');
-            const panelBot = intro.querySelector('.split-panel.bottom');
+        var intro = document.getElementById('split-intro')
+        var panelTop = intro.querySelector('.split-panel.top')
+        var panelBot = intro.querySelector('.split-panel.bottom')
 
-            setTimeout(() => {
-                panelTop.classList.add('slide-out');
-                panelBot.classList.add('slide-out');
+        setTimeout(function() {
+            panelTop.classList.add('slide-out')
+            panelBot.classList.add('slide-out')
+            setTimeout(function() {
+                document.documentElement.classList.remove('intro-active')
+                document.documentElement.style.overflow = ''
+                document.documentElement.style.scrollbarWidth = ''
+                intro.classList.add('hidden')
+            }, 1050)
+        }, 1800)
 
-                setTimeout(() => {
-                    document.documentElement.classList.remove('intro-active');
-                    document.documentElement.style.overflow = '';
-                    document.documentElement.style.scrollbarWidth = '';
-                    intro.classList.add('hidden');
-                }, 1050);
-            }, 1800);
-        })();
+        var animEls = document.querySelectorAll('.animate-left, .animate-right, .animate-fade-up')
+        var scrollObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible')
+                } else {
+                    entry.target.classList.remove('is-visible')
+                }
+            })
+        }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' })
 
-        (function() {
-            const animElements = document.querySelectorAll('.animate-left, .animate-right, .animate-fade-up');
+        animEls.forEach(function(el) { scrollObserver.observe(el) })
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                    } else {
-                        entry.target.classList.remove('is-visible');
-                    }
-                });
-            }, {
-                threshold: 0.15,
-                rootMargin: '0px 0px -60px 0px'
-            });
+        var canvas = document.getElementById('particle-canvas')
+        if (canvas) {
+            var ctx = canvas.getContext('2d')
+            var particles = []
 
-            animElements.forEach(el => observer.observe(el));
-        })();
-
-        (function() {
-            const canvas = document.getElementById('particle-canvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            let particles = [];
-
-            function resize() {
-                const hero = document.getElementById('hero-section');
-                canvas.width = hero.offsetWidth;
-                canvas.height = hero.offsetHeight;
+            function resizeCanvas() {
+                var hero = document.getElementById('hero-section')
+                canvas.width = hero.offsetWidth
+                canvas.height = hero.offsetHeight
             }
-            resize();
-            window.addEventListener('resize', resize);
+            resizeCanvas()
+            window.addEventListener('resize', resizeCanvas)
 
-            function createParticle() {
+            function newParticle() {
                 return {
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
@@ -583,131 +551,117 @@
                     dy: -Math.random() * 0.4 - 0.1,
                     life: 1,
                     decay: Math.random() * 0.002 + 0.001
-                };
-            }
-
-            for (let i = 0; i < 60; i++) particles.push(createParticle());
-
-            function draw() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particles.forEach((p, i) => {
-                    p.x += p.dx;
-                    p.y += p.dy;
-                    p.life -= p.decay;
-                    if (p.life <= 0 || p.y < 0) particles[i] = createParticle();
-
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(201, 169, 110, ${p.alpha * p.life})`;
-                    ctx.fill();
-                });
-                requestAnimationFrame(draw);
-            }
-            draw();
-        })();
-
-        (function() {
-            const counters = document.querySelectorAll('.stat-number');
-            const speed = 60;
-
-            function animateCounter(el) {
-                const target = parseInt(el.dataset.target);
-                let current = 0;
-                const increment = Math.ceil(target / speed);
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        el.textContent = target.toLocaleString('id-ID');
-                        clearInterval(timer);
-                    } else {
-                        el.textContent = current.toLocaleString('id-ID');
-                    }
-                }, 20);
-            }
-
-            const statsObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const number = entry.target.querySelector('.stat-number');
-                        if (number && !number.dataset.animated) {
-                            number.dataset.animated = true;
-                            animateCounter(number);
-                        }
-                    }
-                });
-            }, { threshold: 0.4 });
-
-            document.querySelectorAll('.stat-item').forEach(el => statsObserver.observe(el));
-        })();
-
-        (function() {
-            const hotspots = document.querySelectorAll('.map-hotspot');
-            const infoCard = document.getElementById('map-info-card');
-            
-            const regionData = {
-                sumatera: {
-                    title: "Sumatera",
-                    highlight: "Rumah Gadang, Tari Saman, Songket",
-                    desc: "Pusat peradaban rumpun Melayu dan Minangkabau. Terkenal dengan arsitektur atap lancip ikonik dan tarian dinamis penuh kekompakan.",
-                    image: "/img/peta/gadang.jpg"
-                },
-                jawa: {
-                    title: "Jawa",
-                    highlight: "Wayang Kulit, Gamelan Jawa, Batik",
-                    desc: "Kaya akan warisan keraton Jawa dan Sunda yang agung. Melahirkan karya filosofis luhur seperti batik tulis dan pertunjukan wayang kulit klasik.",
-                    image: "/img/peta/batik.jpg"
-                },
-                balinusatenggara: {
-                    title: "Bali & Nusa Tenggara",
-                    highlight: "Tari Kecak, Kain Tenun Ikat, Sasando",
-                    desc: "Harmoni ritus spiritual Bali yang memukau dunia berpadu dengan tradisi tenun ikat eksotis serta alat musik sasando dari Nusa Tenggara.",
-                    image: "/img/peta/kecak.jpg"
-                },
-                kalimantan: {
-                    title: "Kalimantan",
-                    highlight: "Rumah Betang, Tari Mandau, Sape",
-                    desc: "Rumah bagi kebudayaan Dayak yang menyatu erat dengan hutan hujan tropis. Memiliki musik sape yang magis dan tradisi rumah panjang komunal.",
-                    image: "/img/peta/mandau.jpg"
-                },
-                sulawesi: {
-                    title: "Sulawesi",
-                    highlight: "Tongkonan, Tari Kipas, Kapal Pinisi",
-                    desc: "Terkenal dengan kebudayaan maritim Bugis-Makassar penjelajah samudera dan tradisi pemakaman magis serta arsitektur Tongkonan di Toraja.",
-                    image: "/img/peta/pinisi.jpg"
-                },
-                papua: {
-                    title: "Papua & Maluku",
-                    highlight: "Rumah Honai, Tari Perang, Alat Musik Tifa",
-                    desc: "Kekayaan budaya Melanesia yang eksotis di timur nusantara. Terkenal dengan tari komunal tifa yang bersemangat dan kerajinan ukir yang bernilai tinggi.",
-                    image: "/img/peta/hanoi.jpg"
                 }
-            };
+            }
 
-            hotspots.forEach(hotspot => {
-                hotspot.addEventListener('mouseenter', function() {
-                    hotspots.forEach(h => h.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    const region = this.dataset.region;
-                    const data = regionData[region];
-                    
-                    if (data) {
-                        infoCard.style.opacity = '0';
-                        infoCard.style.transform = 'translateY(10px)';
-                        
-                        setTimeout(() => {
-                            infoCard.querySelector('.info-image').style.backgroundImage = `url('${data.image}')`;
-                            infoCard.querySelector('h3').textContent = data.title;
-                            infoCard.querySelector('.info-highlight').textContent = data.highlight;
-                            infoCard.querySelector('p').textContent = data.desc;
-                            
-                            infoCard.style.opacity = '1';
-                            infoCard.style.transform = 'translateY(0)';
-                        }, 200);
-                    }
-                });
-            });
-        })();
+            for (var i = 0; i < 60; i++) particles.push(newParticle())
+
+            function drawParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height)
+                particles.forEach(function(p, idx) {
+                    p.x += p.dx
+                    p.y += p.dy
+                    p.life -= p.decay
+                    if (p.life <= 0 || p.y < 0) particles[idx] = newParticle()
+                    ctx.beginPath()
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
+                    ctx.fillStyle = 'rgba(201, 169, 110, ' + (p.alpha * p.life) + ')'
+                    ctx.fill()
+                })
+                requestAnimationFrame(drawParticles)
+            }
+            drawParticles()
+        }
+
+        var statSpeed = 60
+        function animateCounter(el) {
+            var target = parseInt(el.dataset.target)
+            var current = 0
+            var inc = Math.ceil(target / statSpeed)
+            var t = setInterval(function() {
+                current += inc
+                if (current >= target) {
+                    el.textContent = target.toLocaleString('id-ID')
+                    clearInterval(t)
+                } else {
+                    el.textContent = current.toLocaleString('id-ID')
+                }
+            }, 20)
+        }
+
+        var statObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (!entry.isIntersecting) return
+                var num = entry.target.querySelector('.stat-number')
+                if (num && !num.dataset.animated) {
+                    num.dataset.animated = true
+                    animateCounter(num)
+                }
+            })
+        }, { threshold: 0.4 })
+
+        document.querySelectorAll('.stat-item').forEach(function(el) { statObserver.observe(el) })
+
+        var hotspots = document.querySelectorAll('.map-hotspot')
+        var infoCard = document.getElementById('map-info-card')
+
+        var regionData = {
+            sumatera: {
+                title: 'Sumatera',
+                highlight: 'Rumah Gadang, Tari Saman, Songket',
+                desc: 'Pusat peradaban rumpun Melayu dan Minangkabau. Terkenal dengan arsitektur atap lancip ikonik dan tarian dinamis penuh kekompakan.',
+                image: '/img/peta/gadang.jpg'
+            },
+            jawa: {
+                title: 'Jawa',
+                highlight: 'Wayang Kulit, Gamelan Jawa, Batik',
+                desc: 'Kaya akan warisan keraton Jawa dan Sunda yang agung. Melahirkan karya filosofis luhur seperti batik tulis dan pertunjukan wayang kulit klasik.',
+                image: '/img/peta/batik.jpg'
+            },
+            balinusatenggara: {
+                title: 'Bali & Nusa Tenggara',
+                highlight: 'Tari Kecak, Kain Tenun Ikat, Sasando',
+                desc: 'Harmoni ritus spiritual Bali yang memukau dunia berpadu dengan tradisi tenun ikat eksotis serta alat musik sasando dari Nusa Tenggara.',
+                image: '/img/peta/kecak.jpg'
+            },
+            kalimantan: {
+                title: 'Kalimantan',
+                highlight: 'Rumah Betang, Tari Mandau, Sape',
+                desc: 'Rumah bagi kebudayaan Dayak yang menyatu erat dengan hutan hujan tropis. Memiliki musik sape yang magis dan tradisi rumah panjang komunal.',
+                image: '/img/peta/mandau.jpg'
+            },
+            sulawesi: {
+                title: 'Sulawesi',
+                highlight: 'Tongkonan, Tari Kipas, Kapal Pinisi',
+                desc: 'Terkenal dengan kebudayaan maritim Bugis-Makassar penjelajah samudera dan tradisi pemakaman magis serta arsitektur Tongkonan di Toraja.',
+                image: '/img/peta/pinisi.jpg'
+            },
+            papua: {
+                title: 'Papua & Maluku',
+                highlight: 'Rumah Honai, Tari Perang, Alat Musik Tifa',
+                desc: 'Kekayaan budaya Melanesia yang eksotis di timur nusantara. Terkenal dengan tari komunal tifa yang bersemangat dan kerajinan ukir yang bernilai tinggi.',
+                image: '/img/peta/hanoi.jpg'
+            }
+        }
+
+        hotspots.forEach(function(hotspot) {
+            hotspot.addEventListener('mouseenter', function() {
+                hotspots.forEach(function(h) { h.classList.remove('active') })
+                this.classList.add('active')
+                var data = regionData[this.dataset.region]
+                if (!data) return
+                infoCard.style.opacity = '0'
+                infoCard.style.transform = 'translateY(10px)'
+                setTimeout(function() {
+                    infoCard.querySelector('.info-image').style.backgroundImage = "url('" + data.image + "')"
+                    infoCard.querySelector('h3').textContent = data.title
+                    infoCard.querySelector('.info-highlight').textContent = data.highlight
+                    infoCard.querySelector('p').textContent = data.desc
+                    infoCard.style.opacity = '1'
+                    infoCard.style.transform = 'translateY(0)'
+                }, 200)
+            })
+        })
     </script>
 </body>
 </html>
